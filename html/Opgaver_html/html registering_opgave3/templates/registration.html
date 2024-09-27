@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask User Registration</title>
+</head>
+<body>
+    <h1>Registrer din Flask App</h1>
+    <form method="post" action="/register">
+        <label for="username">Brugernavn:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="email">Email adresse:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Adgangskode:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <p>Vælg din brugertype:</p>
+        <input type="radio" id="begynder" name="user_type" value="Begynder" required>
+        <label for="begynder">Begynder</label><br>
+        <input type="radio" id="øvet" name="user_type" value="Øvet">
+        <label for="øvet">Øvet</label><br>
+        <input type="radio" id="advanceret" name="user_type" value="Advanceret">
+        <label for="advanceret">Advanceret</label><br><br>
+
+        <input type="checkbox" id="terms" name="terms" value="accepted" required>
+        <label for="terms">Jeg accepterer betingelserne for brug af programmet</label><br><br>
+        <input type="submit" value="Registrer">
+    </form>
+</body>
+</html>
