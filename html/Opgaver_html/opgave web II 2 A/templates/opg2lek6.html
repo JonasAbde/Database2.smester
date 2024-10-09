@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startside</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>Startside</h1>
+        </div>
+        <div id="content">
+            <h3>Velkommen!</h3>
+            <p>Her kan du tilgå forskellige sider:</p>
+            <ul>
+                <li><a href="{{ url_for('allbooks') }}">Vis alle bøger</a></li>
+                <li><a href="{{ url_for('bogtitler') }}">Vis kun bogtitler</a></li>
+            </ul>
+        </div>
+        <div id="footer">
+            <p>Copyright © 2024 - Gruppe 99</p>
+        </div>
+    </div>
+</body>
+</html>

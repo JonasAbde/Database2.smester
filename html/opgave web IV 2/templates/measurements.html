@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Målinger{% endblock %}
+
+{% block content %}
+    <h1>Målinger</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Lokation</th>
+                <th>Temperatur °C</th>
+                <th>Tryk mmHg</th>
+                <th>Dato</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for measurement in measurements %}
+            <tr>
+                <td>{{ measurement.lokation }}</td>
+                <td>{{ measurement.temp }}</td>
+                <td>{{ measurement.tryk }}</td>
+                <td>{{ measurement.dato }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

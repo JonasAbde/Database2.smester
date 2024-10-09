@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Webside{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style_local.css') }}">
+</head>
+<body>
+
+    <header>
+        <div id="nav-bar">
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('measurements_page') }}">Målinger</a></li>
+                    <li><a href="{{ url_for('input') }}">Indtast Data</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        <div id="footer-content">
+            <p>Copyright © 2024</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alle Bøger</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>Liste med alle bøger</h1>
+        </div>
+        <div id="content">
+            <table>
+                <thead>
+                    <tr>
+                        {% for heading in headings %}
+                        <th class="tableh">{{ heading }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for book in books %}
+                    <tr>
+                        <td class="tabled">{{ book.title }}</td>
+                        <td class="tabled">{{ book.author }}</td>
+                        <td class="tabled">{{ book.year }}</td>
+                    </tr>
+                    {% endfor %}
+                </t
