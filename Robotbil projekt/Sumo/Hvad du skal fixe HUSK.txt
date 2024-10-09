@@ -1,0 +1,26 @@
+1. Dens normale tilstand skal egentlig være at den drejer rundt i en cirkel
+
+2. Når der så blir smidt et objekt ind, skal censoren opfange det
+
+3. Derefter skal bilen dreje i retning mod objektet
+
+4. Den skal scriptes til at køre lige ud i en vis periode (altså at den køre mod objektet og skubber objektet)
+
+5. Derefter skal den køre tilbage til samme placering 
+
+6. Når den så har gjort det skal den egentlig bar loop tilbage til dens almindelig og normale tilstand igen.
+
+
+
+
+
+-------
+Tilføjelse:
+
+
+Vi skal egentlig bruge infrarød censoren FORDI at når robot bilen har skubbet objektet udover den sorte streg,
+må den ikke følge med derefter.
+
+Step 5 er egentlig bar en tilføjelse til at gøre klar, så vi kan bruge infrarød censor.
+
+
