@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Robot Car Dashboard</title>
+    <meta http-equiv="refresh" content="1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card h2 {
+            margin-top: 0;
+        }
+        .speed {
+            font-size: 36px;
+            color: #007BFF;
+        }
+        .direction {
+            font-size: 24px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Robot Car Dashboard</h1>
+        <div class="card">
+            <h2>Motor Speeds</h2>
+            <p class="speed">Left Motor: {speed_left_kmh} km/h</p>
+            <p class="direction">Direction: {direction_left}</p>
+            <p class="speed">Right Motor: {speed_right_kmh} km/h</p>
+            <p class="direction">Direction: {direction_right}</p>
+        </div>
+    </div>
+</body>
+</html>
