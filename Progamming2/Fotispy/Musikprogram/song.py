@@ -5,12 +5,13 @@ class Song:
         self.title = title
         self.artist = artist
         self.length = length
-        self.file = file  # filename of the audio file
+        self.file = file
 
     def play(self):
+        print(f"Playing {self.title} by {self.artist}...")  # Tilføjer en bekræftelse
         wave_obj = sa.WaveObject.from_wave_file(self.file)
         play_obj = wave_obj.play()
-        play_obj.wait_done()  # Wait until sound has finished playing
+        play_obj.wait_done()  # Venter, indtil afspilningen er færdig
 
     def __str__(self):
         return f"{self.title} by {self.artist} - {self.length}"
