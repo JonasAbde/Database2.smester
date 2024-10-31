@@ -1,0 +1,4 @@
+trek/22/test: test fra mqttbox!!
+trek/22/test: oooo
+trek/22/test: postgre test
+trek/22/test: postgre test

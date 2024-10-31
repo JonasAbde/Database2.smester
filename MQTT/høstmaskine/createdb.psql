@@ -1,0 +1,12 @@
+create database environment;
+
+\c environment;
+
+create table if not exists measurements
+        (id serial primary key,
+        textkey varchar(50),
+        measurement float,
+        registereded_time timestamp);
+
+
+delete from measurements;
