@@ -1,4 +1,5 @@
 import random
+import json
 from song import Song
 
 class Playlist:
@@ -42,3 +43,20 @@ class Playlist:
             print("Current songs in playlist:")
             for song in self.songs:
                 print(f"- {song.title} by {song.artist} [{song.length}] ({song.file})")
+
+    def save_playlist(self, filename="playlist.json"):
+        data = [{"title": song.title, "artist": song.artist, "length": song.length, "file": song.file} for song in self.songs]
+        with open(filename, "w") as f:
+            json.dump(data, f)
+        print("Playlist saved.")
+
+    def load_playlist(self, filename="playlist.json"):
+        try:
+            with open(filename, "r") as f:
+                data = json.load(f)
+                for song_data in data:
+                    song = Song(song_data["title"], song_data["artist"], song_data["length"], song_data["file"])
+                    self.songs.append(song)
+            print("Playlist loaded.")
+        except FileNotFoundError:
+            print("No saved playlist found.")

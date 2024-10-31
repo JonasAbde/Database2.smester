@@ -3,13 +3,10 @@ import shutil
 from playlist import Playlist
 from song import Song
 
-# Funktion til at kopiere filen til projektmappen, hvis nødvendigt
 def ensure_file_in_folder(file):
-    # Hent nuværende mappe (hvor main.py er placeret)
     current_folder = os.path.dirname(os.path.abspath(__file__))
     destination = os.path.join(current_folder, os.path.basename(file))
 
-    # Hvis filen ikke allerede er i mappen, kopier den derhen
     if not os.path.exists(destination):
         try:
             shutil.copy(file, destination)
@@ -21,6 +18,7 @@ def ensure_file_in_folder(file):
 
 def main_menu():
     playlist = Playlist()
+    playlist.load_playlist()  # Indlæs gemt playliste, hvis tilgængelig
 
     while True:
         print("\n1. Add song")
@@ -28,7 +26,8 @@ def main_menu():
         print("3. Play all songs")
         print("4. Shuffle play")
         print("5. Show playlist")
-        print("6. Exit")
+        print("6. Save playlist")
+        print("7. Exit")
 
         choice = input("Choose an option: ")
 
@@ -38,7 +37,6 @@ def main_menu():
             length = input("Enter song length (e.g., 3:45): ")
             file = input("Enter filename with path if outside folder (e.g., C:/path/to/1.wav): ")
             
-            # Kontroller og kopier filen til projektmappen, hvis nødvendigt
             file_path = ensure_file_in_folder(file)
             if file_path:
                 song = Song(title, artist, length, file_path)
@@ -53,6 +51,8 @@ def main_menu():
         elif choice == "5":
             playlist.show_playlist()
         elif choice == "6":
+            playlist.save_playlist()
+        elif choice == "7":
             print("Exiting program.")
             break
         else:
