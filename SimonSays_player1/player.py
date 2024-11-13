@@ -8,7 +8,7 @@ SSID = "ITEK 2nd"
 PASSWORD = "2nd_Semester_E24a"
 
 # Server konfiguration (PC'ens IP-adresse og port)
-HOST = 'PCens_IP_adresse'  # Skift til PC'ens IP-adresse
+HOST = '10.120.0.18'  # Skift til PC'ens IP-adresse
 PORT = 5005
 
 # WiFi-forbindelse
