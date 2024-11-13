@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon's Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Simon's Game</h1>
+        <p>Næste i sekvensen: {{ next_color }}</p>
+        <div id="simon-board">
+            <form method="post" action="{{ url_for('player_input', color='red') }}">
+                <button class="color-btn" id="red"><img src="{{ url_for('static', filename='images/red.jpg') }}" alt="Red Button"></button>
+            </form>
+            <form method="post" action="{{ url_for('player_input', color='green') }}">
+                <button class="color-btn" id="green"><img src="{{ url_for('static', filename='images/green.jpg') }}" alt="Green Button"></button>
+            </form>
+            <form method="post" action="{{ url_for('player_input', color='blue') }}">
+                <button class="color-btn" id="blue"><img src="{{ url_for('static', filename='images/blue.jpg') }}" alt="Blue Button"></button>
+            </form>
+            <form method="post" action="{{ url_for('player_input', color='yellow') }}">
+                <button class="color-btn" id="yellow"><img src="{{ url_for('static', filename='images/yellow.jpg') }}" alt="Yellow Button"></button>
+            </form>
+        </div>
+        <div id="scoreboard">
+            <p>Score: {{ score }}</p>
+            <p>High Score: {{ high_score }}</p>
+        </div>
+        <div id="quit">
+            <a href="/">Quit</a>
+        </div>
+    </div>
+</body>
+</html>

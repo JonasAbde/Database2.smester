@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon's Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Simon's Game</h1>
+        <p id="sequence">Sekvens: ...</p>
+        <p id="score">Score: 0</p>
+
+        <div id="simon-board">
+            <img src="{{ url_for('static', filename='images/red.jpg') }}" id="red" alt="Red Button">
+            <img src="{{ url_for('static', filename='images/green.jpg') }}" id="green" alt="Green Button">
+            <img src="{{ url_for('static', filename='images/blue.jpg') }}" id="blue" alt="Blue Button">
+            <img src="{{ url_for('static', filename='images/yellow.jpg') }}" id="yellow" alt="Yellow Button">
+        </div>
+    </div>
+
+    <script>
+        const socket = io();
+
+        socket.on('update', (data) => {
+            document.getElementById('score').innerText = `Score: ${data.score}`;
+            document.getElementById('sequence').innerText = `Sekvens: ${data.sequence.join(", ")}`;
+        });
+    </script>
+</body>
+</html>
