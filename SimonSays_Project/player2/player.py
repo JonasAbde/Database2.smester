@@ -1,6 +1,5 @@
 import socket
 import time
-from button_handler import get_pressed_button  # Importer knapfunktioner
 
 # Opret forbindelse til serveren
 HOST = '10.120.0.18'
@@ -22,28 +21,25 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 break
             continue
         
+        # Behandl sekvensen som en liste af farver
         sequence = eval(data)
         print("Modtaget sekvens:", sequence)
 
-        # Spilleren trykker på knapper for at vælge farver
-        player_input = []
-        for _ in range(len(sequence)):
-            selected_color = None
-            while not selected_color:
-                selected_color = get_pressed_button()  # Få farven på den trykkede knap
-            player_input.append(selected_color)
-            print(f"Spiller valgte: {selected_color}")
-            time.sleep(0.5)  # Lille forsinkelse for at undgå gentagelser
+        # Spilleren forsøger at efterligne sekvensen
+        # Her kan du opdatere player_input til at læse input fra spilleren, hvis nødvendigt
+        player_input = sequence  # For test antages korrekt input
 
         # Sender spillerens sekvens tilbage til serveren
         s.sendall(str(player_input).encode())
 
         # Modtager feedback fra serveren
         feedback = s.recv(1024).decode()
-        if feedback == "correct":
-            print("Sekvensen var korrekt!")
-        elif feedback == "incorrect":
-            print("Sekvensen var forkert. Spillet er slut.")
+        status, score = feedback.split(',')
+
+        if status == "correct":
+            print(f"Sekvensen var korrekt! Din score er nu: {score}")
+        elif status == "incorrect":
+            print(f"Sekvensen var forkert. Spillet er slut. Din endelige score var: {score}")
             break  # Afslut spillet, hvis sekvensen er forkert
 
         time.sleep(2)

@@ -5,7 +5,7 @@ import psycopg2
 import threading
 
 # Server configuration
-HOST = '10.120.0.18'
+HOST = '10.120.0.18'  # Skift til IP-adressen på din PC i det lokale netværk
 PORT = 5005
 
 # Database connection setup
