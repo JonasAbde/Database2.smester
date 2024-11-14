@@ -26,9 +26,9 @@ def connect_to_wifi():
 # Knap og LED-konfiguration
 buttons = {
     "red": {"pin": 0, "led": 1},    # GPIO 0 for rød knap og GPIO 1 for rød LED
-    "green": {"pin": 2, "led": 3},  # GPIO 2 for grøn knap og GPIO 3 for grøn LED
-    "blue": {"pin": 4, "led": 5},   # GPIO 4 for blå knap og GPIO 5 for blå LED
-    "yellow": {"pin": 6, "led": 7}  # GPIO 6 for gul knap og GPIO 7 for gul LED
+    "green": {"pin": 0, "led": 1},  # GPIO 2 for grøn knap og GPIO 3 for grøn LED
+    "blue": {"pin": 0, "led": 1},   # GPIO 4 for blå knap og GPIO 5 for blå LED
+    "yellow": {"pin": 0, "led": 0}  # GPIO 6 for gul knap og GPIO 7 for gul LED
 }
 
 # Initialiser knapper og LED'er

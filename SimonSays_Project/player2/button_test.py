@@ -4,7 +4,7 @@ from machine import Pin
 import time
 
 # Konfigurer GPIO-pins
-button_pin = 0  # GPIO-pin til den røde knap
+button_pin = 5  # GPIO-pin til den røde knap
 led_pin = 1     # GPIO-pin til den indbyggede LED
 
 # Opsætning af knap og LED
